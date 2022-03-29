@@ -269,7 +269,7 @@ def view_predict_period():
 @is_trained
 def view_predict_date():
     min_value=session["beli_train"]["y_train"].index[0]
-    max_value=session["beli_test"]["y_test"].index[-1] + pd.Timedelta(days=360)
+    max_value=session["beli_test"]["y_test"].index[-1] + pd.Timedelta(days=30)
 
     with st.form("Date"):
         date = st.date_input(label="Masukkan Tanggal", value=min_value, min_value=min_value, max_value=max_value)
